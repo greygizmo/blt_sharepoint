@@ -20,15 +20,35 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "18"
-          cache: 'npm'
+          
+      # Explicitly install dependencies without using cache
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm ci --no-audit --no-fund
+          npm list
+        
+      # Add diagnostic step to see environment
+      - name: Debug environment
+        run: |
+          echo "Node version: $(node -v)"
+          echo "NPM version: $(npm -v)"
+          echo "Working directory content:"
+          ls -la
+          
       - name: Build
         run: npm run build
+        
+      # Add diagnostic step
+      - name: Check output directory
+        run: |
+          echo "Output directory content:"
+          ls -la out || echo "out directory does not exist!"
+          
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
