@@ -6,6 +6,7 @@ import Image from "next/image"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardTitle, CardDescription } from "@/components/ui/card"
 import { Carousel } from "@/components/ui/carousel"
+import { useAssetPath } from "../../../lib/utils"
 
 interface Printer {
   name: string
@@ -77,6 +78,10 @@ const industries: Industry[] = [
 ]
 
 const WhatSection = () => {
+  const [activeTab, setActiveTab] = useState("hardware")
+  const [activePrinter, setActivePrinter] = useState(0)
+  const getAssetPath = useAssetPath()
+  
   const fadeInUpVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
@@ -123,7 +128,7 @@ const WhatSection = () => {
           <div className="flex flex-col md:flex-row gap-8 items-center">
             <div className="w-full md:w-1/2 relative h-64 md:h-80">
               <Image 
-                src="/images/metal-3d-printer.png" 
+                src={getAssetPath("/images/metal-3d-printer.png")} 
                 alt="BLT Metal 3D Printer" 
                 fill 
                 className="object-contain"
@@ -141,13 +146,17 @@ const WhatSection = () => {
         {/* Printer Carousel */}
         <motion.div variants={fadeInUpVariants} custom={2} className="py-8">
           <h4 className="text-xl font-semibold mb-6">Our Printer Range</h4>
-          <Carousel visibleSlides={1}>
+          <Carousel opts={{
+            align: "start",
+            slidesToScroll: 1,
+            containScroll: "trimSnaps"
+          }}>
             {printers.map((printer, index) => (
               <Card key={index} className="h-full">
                 <CardContent className="p-6 flex flex-col h-full">
                   <div className="relative h-48 mb-4">
                     <Image 
-                      src={printer.image} 
+                      src={getAssetPath(printer.image)} 
                       alt={printer.name}
                       fill
                       className="object-contain"
@@ -194,7 +203,7 @@ const WhatSection = () => {
           <div className="flex flex-col md:flex-row gap-8 items-center">
             <div className="w-full md:w-1/2 order-1 md:order-2 relative h-64 md:h-80">
               <Image 
-                src="/images/software-solutions.png" 
+                src={getAssetPath("/images/software-solutions.png")} 
                 alt="BLT Software Solutions" 
                 fill 
                 className="object-contain"
@@ -270,7 +279,7 @@ const WhatSection = () => {
               <div className="absolute inset-0 bg-gray-900 opacity-50 group-hover:opacity-70 transition-opacity" />
               <div className="relative h-full w-full">
                 <Image
-                  src={industry.image}
+                  src={getAssetPath(industry.image)}
                   alt={industry.name}
                   fill
                   className="object-cover grayscale group-hover:grayscale-0 transition-all"

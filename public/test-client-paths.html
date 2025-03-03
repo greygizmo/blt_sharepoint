@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Client-Side Path Resolution Tester</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+    .section {
+      margin-bottom: 30px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background-color: #f9f9f9;
+    }
+    .btn {
+      padding: 8px 16px;
+      background-color: #0070f3;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-right: 10px;
+    }
+    .btn:hover {
+      background-color: #0051a2;
+    }
+    .results {
+      white-space: pre;
+      padding: 10px;
+      background-color: #eee;
+      border-radius: 4px;
+      margin-top: 10px;
+      font-family: monospace;
+      max-height: 200px;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Client-Side Path Resolution Tester</h1>
+  
+  <div class="section">
+    <h2>Current Base Path</h2>
+    <div id="current-base">No base path set</div>
+    
+    <h3>Set Base Path</h3>
+    <div>
+      <button class="btn" onclick="setBasePath('/BLT/')">Set to /BLT/</button>
+      <button class="btn" onclick="setBasePath('/custom-path/')">Set to /custom-path/</button>
+      <button class="btn" onclick="setBasePath('')">Clear Base Path</button>
+    </div>
+  </div>
+  
+  <div class="section">
+    <h2>Test Path Resolution</h2>
+    <div>
+      <input type="text" id="test-path" value="/images/test.png" style="padding: 8px; width: 250px;">
+      <button class="btn" onclick="testPath()">Test Path</button>
+    </div>
+    <div class="results" id="path-results"></div>
+  </div>
+  
+  <div class="section">
+    <h2>Test Image Loading</h2>
+    <div>
+      <p>This will attempt to load an image using the client-side path resolution:</p>
+      <button class="btn" onclick="loadTestImage()">Load Test Image</button>
+    </div>
+    <div style="margin-top: 15px; min-height: 100px; border: 1px dashed #ccc; padding: 10px;">
+      <div id="image-container"></div>
+    </div>
+    <div class="results" id="image-results"></div>
+  </div>
+  
+  <script>
+    // Function to update the current base path display
+    function updateBasePathDisplay() {
+      const baseElement = document.querySelector('base');
+      const basePath = baseElement ? baseElement.getAttribute('href') : null;
+      
+      document.getElementById('current-base').textContent = 
+        basePath ? `Base path: ${basePath}` : 'No base path set';
+    }
+    
+    // Function to set the base path
+    function setBasePath(path) {
+      // Remove any existing base element
+      const existingBase = document.querySelector('base');
+      if (existingBase) {
+        existingBase.remove();
+      }
+      
+      // If path is not empty, create and add a new base element
+      if (path) {
+        const baseElement = document.createElement('base');
+        baseElement.setAttribute('href', path);
+        document.head.prepend(baseElement);
+      }
+      
+      updateBasePathDisplay();
+      
+      document.getElementById('path-results').textContent = 
+        `Base path ${path ? `set to: ${path}` : 'cleared'}`;
+    }
+    
+    // Function to test path resolution
+    function testPath() {
+      const path = document.getElementById('test-path').value;
+      const baseElement = document.querySelector('base');
+      const basePath = baseElement ? baseElement.getAttribute('href') || '' : '';
+      
+      // Client-side path resolution logic
+      const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+      const resolvedPath = `${basePath}${normalizedPath}`.replace('//', '/');
+      
+      document.getElementById('path-results').textContent = 
+        `Original path: ${path}\nBase path: ${basePath || '(empty)'}\nResolved path: ${resolvedPath}`;
+    }
+    
+    // Function to test image loading
+    function loadTestImage() {
+      const path = document.getElementById('test-path').value;
+      const baseElement = document.querySelector('base');
+      const basePath = baseElement ? baseElement.getAttribute('href') || '' : '';
+      
+      // Client-side path resolution logic
+      const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+      const resolvedPath = `${basePath}${normalizedPath}`.replace('//', '/');
+      
+      // Create and load the image
+      const imageContainer = document.getElementById('image-container');
+      imageContainer.innerHTML = '';
+      
+      const image = new Image();
+      image.onload = () => {
+        document.getElementById('image-results').textContent = 
+          `Image loaded successfully from: ${resolvedPath}`;
+      };
+      image.onerror = (e) => {
+        document.getElementById('image-results').textContent = 
+          `Error loading image from: ${resolvedPath}\nMake sure the path points to a valid image file.`;
+      };
+      
+      image.src = resolvedPath;
+      image.alt = 'Test image';
+      image.style.maxWidth = '100%';
+      image.style.maxHeight = '200px';
+      
+      imageContainer.appendChild(image);
+    }
+    
+    // Initialize the page
+    updateBasePathDisplay();
+  </script>
+</body>
+</html> 

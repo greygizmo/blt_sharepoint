@@ -1,8 +1,10 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
+import { useAssetPath } from "../../../lib/utils"
 
 interface ProcessStep {
   number: number
@@ -120,6 +122,9 @@ const trainingPrograms: TrainingProgram[] = [
 ]
 
 const HowSection = () => {
+  const [activeTab, setActiveTab] = useState(0)
+  const getAssetPath = useAssetPath()
+  
   const fadeInUpVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
@@ -164,43 +169,46 @@ const HowSection = () => {
       >
         <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gray-200 -translate-x-1/2 z-0"></div>
         
-        {processSteps.map((step, index) => (
-          <motion.div
-            key={index}
-            variants={fadeInUpVariants}
-            custom={index}
-            className={`relative z-10 flex flex-col md:flex-row items-center md:items-start gap-6 mb-12 last:mb-0 ${
-              index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-            }`}
-          >
-            <div className={`w-full md:w-1/2 flex ${index % 2 === 0 ? "md:justify-end" : "md:justify-start"}`}>
-              <div className={`w-full max-w-md ${index % 2 === 0 ? "md:pr-12" : "md:pl-12"}`}>
-                <div className="flex items-center mb-3">
-                  <div className="w-10 h-10 rounded-full bg-blt-orange text-white flex items-center justify-center font-bold text-lg mr-3">
-                    {step.number}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {processSteps.map((step, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              variants={fadeInUpVariants}
+              custom={index}
+              className={`relative z-10 flex flex-col md:flex-row items-center md:items-start gap-6 mb-12 last:mb-0 ${
+                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              }`}
+            >
+              <div className={`w-full md:w-1/2 flex ${index % 2 === 0 ? "md:justify-end" : "md:justify-start"}`}>
+                <div className={`w-full max-w-md ${index % 2 === 0 ? "md:pr-12" : "md:pl-12"}`}>
+                  <div className="flex items-center mb-3">
+                    <div className="w-10 h-10 rounded-full bg-blt-orange text-white flex items-center justify-center font-bold text-lg mr-3">
+                      {step.number}
+                    </div>
+                    <h3 className="text-xl font-semibold text-blt-orange">{step.title}</h3>
                   </div>
-                  <h3 className="text-xl font-semibold text-blt-orange">{step.title}</h3>
-                </div>
-                <p className="text-gray-700">{step.description}</p>
-              </div>
-            </div>
-            
-            <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex">
-              <div className="w-12 h-12 rounded-full bg-white border-4 border-blt-orange flex items-center justify-center">
-                <div className="w-8 h-8 relative">
-                  <Image 
-                    src={step.icon} 
-                    alt={step.title} 
-                    fill 
-                    className="object-contain"
-                  />
+                  <p className="text-gray-700">{step.description}</p>
                 </div>
               </div>
-            </div>
-            
-            <div className="w-full md:w-1/2"></div>
-          </motion.div>
-        ))}
+              
+              <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex">
+                <div className="w-12 h-12 rounded-full bg-white border-4 border-blt-orange flex items-center justify-center">
+                  <div className="w-8 h-8 relative">
+                    <Image 
+                      src={getAssetPath(step.icon)} 
+                      alt={step.title} 
+                      fill 
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
+              </div>
+              
+              <div className="w-full md:w-1/2"></div>
+            </motion.div>
+          ))}
+        </div>
       </motion.div>
 
       {/* Support Services */}
@@ -225,7 +233,7 @@ const HowSection = () => {
               <div className="flex items-start mb-4">
                 <div className="w-12 h-12 relative mr-4 flex-shrink-0">
                   <Image 
-                    src={service.icon} 
+                    src={getAssetPath(service.icon)} 
                     alt={service.title} 
                     fill 
                     className="object-contain"

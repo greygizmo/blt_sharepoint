@@ -4,8 +4,5 @@ export {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
-  type CarouselProps,
-  type CarouselContentProps,
-  type CarouselItemProps,
-  type CarouselNavigationProps
+  type CarouselApi
 } from "../carousel"; 

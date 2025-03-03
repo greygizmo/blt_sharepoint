@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Client-Side Path Test</title>
+  <!-- The base tag will be set dynamically by the buttons below -->
+  <script>
+    // Function to set the base path
+    function setBasePath(path) {
+      // Remove any existing base element
+      const existingBase = document.querySelector('base');
+      if (existingBase) {
+        existingBase.remove();
+      }
+      
+      // Create and add a new base element if path is not empty
+      if (path) {
+        const baseElement = document.createElement('base');
+        baseElement.setAttribute('href', path);
+        document.head.prepend(baseElement);
+        document.getElementById('basePath').textContent = path;
+      } else {
+        document.getElementById('basePath').textContent = 'None';
+      }
+    }
+    
+    // Function to test path resolution
+    function checkPaths() {
+      const testPath = "/images/test.png";
+      const baseElement = document.querySelector('base');
+      const basePath = baseElement ? baseElement.getAttribute('href') || '' : '';
+      const resolvedPath = `${basePath}${testPath}`.replace('//', '/');
+      
+      document.getElementById('result').innerHTML = 
+        `<strong>Original path:</strong> ${testPath}<br>` +
+        `<strong>Base path:</strong> ${basePath || 'None'}<br>` +
+        `<strong>Resolved path:</strong> ${resolvedPath}`;
+      
+      // Try to load the image
+      const img = document.getElementById('testImage');
+      img.src = resolvedPath;
+      img.style.display = 'block';
+    }
+  </script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    button {
+      background-color: #0070f3;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      margin: 4px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0051a2;
+    }
+    .card {
+      border: 1px solid #eaeaea;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0;
+      background-color: #f8f9fa;
+    }
+    .image-container {
+      margin-top: 16px;
+      border: 1px dashed #ccc;
+      padding: 16px;
+      text-align: center;
+    }
+    #testImage {
+      display: none;
+      max-width: 100%;
+      max-height: 200px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Client-Side Path Resolution Test</h1>
+  
+  <div class="card">
+    <h2>Current Settings</h2>
+    <p><strong>Base Path:</strong> <span id="basePath">None</span></p>
+    
+    <h3>Set Base Path</h3>
+    <div>
+      <button onclick="setBasePath('/BLT/')">Set to /BLT/</button>
+      <button onclick="setBasePath('/custom-path/')">Set to /custom-path/</button>
+      <button onclick="setBasePath('')">Clear Base Path</button>
+    </div>
+  </div>
+  
+  <div class="card">
+    <h2>Test Path Resolution</h2>
+    <button onclick="checkPaths()">Test Path Resolution</button>
+    
+    <div id="result" style="margin-top: 16px;"></div>
+    
+    <div class="image-container">
+      <p>Image loading test:</p>
+      <img id="testImage" alt="Test image" />
+    </div>
+  </div>
+  
+  <div class="card">
+    <h2>Manual Testing Instructions</h2>
+    <ol>
+      <li>First, set a base path using one of the buttons above</li>
+      <li>Click "Test Path Resolution" to see how paths are resolved</li>
+      <li>If an image exists at the resolved path, it will be displayed</li>
+      <li>Try different base paths to verify the path resolution logic</li>
+      <li>Use this page to verify that your client-side components will work with different base paths</li>
+    </ol>
+  </div>
+</body>
+</html> 

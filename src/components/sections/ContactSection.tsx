@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { useAssetPath } from "../../../lib/utils"
 
 interface Office {
   name: string
@@ -58,6 +59,8 @@ const ContactSection = () => {
     message: ""
   })
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle")
+  const [selectedOffice, setSelectedOffice] = useState(0)
+  const getAssetPath = useAssetPath()
 
   const fadeInUpVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -276,7 +279,7 @@ const ContactSection = () => {
             <div key={index} className="flex flex-col md:flex-row gap-6 bg-white p-6 rounded-xl shadow-sm">
               <div className="w-full md:w-1/3 h-48 relative rounded-lg overflow-hidden">
                 <Image 
-                  src={office.image} 
+                  src={getAssetPath(office.image)} 
                   alt={office.name} 
                   fill 
                   className="object-cover"

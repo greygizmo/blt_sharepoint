@@ -16,6 +16,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "../../src/components/ui/carousel"
+import { useAssetPath } from "../../lib/utils"
 
 interface Printer {
   name: string
@@ -191,6 +192,7 @@ const industries: Industry[] = [
 const WhatSection = () => {
   const sectionRef = useRef<HTMLElement>(null)
   const isInView = useInView(sectionRef, { once: true, amount: 0.1 })
+  const getAssetPath = useAssetPath()
   
   // Adjustable opacity for images (0-1)
   const imageOpacity = 0.9
@@ -263,7 +265,7 @@ const WhatSection = () => {
               style={{ opacity: imageOpacity }}
             >
               <Image 
-                src="/images/metal-3d-printer.png"
+                src={getAssetPath("/images/metal-3d-printer.png")}
                 alt="BLT Metal 3D Printer"
                 width={600}
                 height={380}
@@ -287,7 +289,7 @@ const WhatSection = () => {
               style={{ opacity: imageOpacity }}
             >
               <Image 
-                src="/images/blt-metal-powder.png"
+                src={getAssetPath("/images/blt-metal-powder.png")}
                 alt="BLT Metal Powders"
                 width={500}
                 height={350}
@@ -311,7 +313,7 @@ const WhatSection = () => {
               style={{ opacity: imageOpacity }}
             >
               <Image 
-                src="/images/blt-post-processing.png"
+                src={getAssetPath("/images/blt-post-processing.png")}
                 alt="Post-Processing Solutions"
                 width={600}
                 height={380}
@@ -335,7 +337,7 @@ const WhatSection = () => {
               style={{ opacity: imageOpacity }}
             >
               <Image 
-                src="/images/magics.jpg"
+                src={getAssetPath("/images/magics.jpg")}
                 alt="AM Services"
                 width={600}
                 height={380}
@@ -387,7 +389,7 @@ const WhatSection = () => {
                       >
                         <div className="p-2">
                           <Image 
-                            src={printer.image}
+                            src={getAssetPath(printer.image)}
                             alt={`${printer.name} 3D Printer`}
                             width={240}
                             height={200}
@@ -442,7 +444,7 @@ const WhatSection = () => {
             {/* Left Side - Image */}
             <div className="w-full md:w-1/2 relative h-[450px] flex items-center justify-center pt-36">
               <Image 
-                src="/images/nozzle.png"
+                src={getAssetPath("/images/nozzle.png")}
                 alt="BLT 3D Printer Nozzle"
                 width={450}
                 height={350}
@@ -523,7 +525,7 @@ const WhatSection = () => {
                 <div className="absolute inset-0 z-0">
                   <div className="relative w-full h-full" style={{ opacity: imageOpacity }}>
                     <Image 
-                      src={industry.image}
+                      src={getAssetPath(industry.image)}
                       alt={industry.name}
                       fill
                       className="object-cover opacity-40"
@@ -566,7 +568,7 @@ const WhatSection = () => {
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="w-full md:w-1/2 relative h-[200px] bg-gray-900 rounded-lg overflow-hidden flex items-center justify-center">
                 <Image 
-                  src="/images/S210.png"
+                  src={getAssetPath("/images/S210.png")}
                   alt="Turn Key Solutions"
                   width={300}
                   height={180}
@@ -586,7 +588,7 @@ const WhatSection = () => {
             <div className="flex flex-col md:flex-row-reverse items-center gap-8">
               <div className="w-full md:w-1/2 relative h-[200px] bg-gray-900 rounded-lg overflow-hidden flex items-center justify-center">
                 <Image 
-                  src="/images/metal-3d-printer.png"
+                  src={getAssetPath("/images/metal-3d-printer.png")}
                   alt="Production Cells"
                   width={300}
                   height={180}
@@ -606,7 +608,7 @@ const WhatSection = () => {
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="w-full md:w-1/2 relative h-[200px] bg-gray-900 rounded-lg overflow-hidden flex items-center justify-center">
                 <Image 
-                  src="/images/S210.png"
+                  src={getAssetPath("/images/S210.png")}
                   alt="Pilot Projects"
                   width={300}
                   height={180}

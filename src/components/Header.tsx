@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { useAssetPath } from "../../lib/utils"
 
 interface NavLink {
   label: string
@@ -20,6 +21,7 @@ const navLinks: NavLink[] = [
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const getAssetPath = useAssetPath()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,7 +45,7 @@ const Header = () => {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
+        isScrolled ? "bg-white text-gray-900 shadow-lg py-3" : "bg-transparent text-white py-5"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -52,7 +54,7 @@ const Header = () => {
           <div className="relative z-10">
             <Link href="/" aria-label="BLT Advanced Manufacturing Home">
               <Image 
-                src={isScrolled ? "/images/blt-logo.png" : "/images/blt-logo-white.png"} 
+                src={getAssetPath(isScrolled ? "/images/blt-logo.png" : "/images/blt-logo-white.png")}
                 alt="BLT Advanced Manufacturing" 
                 width={150} 
                 height={50}

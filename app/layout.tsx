@@ -31,8 +31,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Determine the base path for assets based on environment
+  const basePath = process.env.NODE_ENV === 'production' ? '/BLT' : '';
+  
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${winston.variable} font-sans`}>
+      <head>
+        {/* This base tag helps with GitHub Pages deployment */}
+        <base href={basePath + '/'} />
+      </head>
       <body className="min-h-screen bg-black text-white">
         <div className="vertical-laser h-screen">
           <div className="absolute top-1/2 left-0 w-full h-[10px] bg-blt-orange laser-glow"></div>

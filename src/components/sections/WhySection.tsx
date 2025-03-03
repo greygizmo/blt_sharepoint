@@ -4,6 +4,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
+import { useAssetPath } from "../../../lib/utils"
 
 interface Benefit {
   icon: string
@@ -113,6 +114,7 @@ const caseStudies: CaseStudy[] = [
 const WhySection = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(0)
   const [activeCaseStudy, setActiveCaseStudy] = useState(0)
+  const getAssetPath = useAssetPath()
 
   const fadeInUpVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -182,7 +184,7 @@ const WhySection = () => {
             <div className="flex items-start mb-4">
               <div className="w-12 h-12 relative mr-4 flex-shrink-0">
                 <Image 
-                  src={benefit.icon} 
+                  src={getAssetPath(benefit.icon)} 
                   alt={benefit.title} 
                   fill 
                   className="object-contain"
@@ -216,7 +218,7 @@ const WhySection = () => {
                 <div className="flex flex-col md:flex-row items-center gap-8">
                   <div className="w-24 h-24 md:w-32 md:h-32 relative rounded-full overflow-hidden flex-shrink-0">
                     <Image 
-                      src={testimonial.image} 
+                      src={getAssetPath(testimonial.image)} 
                       alt={testimonial.author} 
                       fill 
                       className="object-cover"
@@ -291,7 +293,7 @@ const WhySection = () => {
                 <div className="flex flex-col md:flex-row">
                   <div className="w-full md:w-2/5 relative h-64 md:h-auto">
                     <Image 
-                      src={caseStudy.image} 
+                      src={getAssetPath(caseStudy.image)} 
                       alt={caseStudy.title} 
                       fill 
                       className="object-cover"

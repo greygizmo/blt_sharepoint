@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
+import { useAssetPath } from "../lib/utils"
 
 interface FooterLink {
   label: string
@@ -49,6 +50,7 @@ const socialLinks: SocialLink[] = [
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
+  const getAssetPath = useAssetPath()
 
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
@@ -58,7 +60,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="mb-6">
               <Image 
-                src="/images/blt-logo-white.png" 
+                src={getAssetPath("/images/blt-logo-white.png")}
                 alt="BLT Advanced Manufacturing" 
                 width={180} 
                 height={60}
@@ -81,7 +83,7 @@ const Footer = () => {
                 >
                   <div className="w-5 h-5 relative">
                     <Image 
-                      src={link.icon} 
+                      src={getAssetPath(link.icon)}
                       alt={link.platform} 
                       fill 
                       className="object-contain"

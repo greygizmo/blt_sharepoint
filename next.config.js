@@ -5,9 +5,21 @@ const nextConfig = {
     domains: ['placehold.co'],
     unoptimized: true, // Required for static export
   },
-  output: process.env.NODE_ENV === 'production' ? 'export' : undefined, // Only use export for production
-  basePath: process.env.NODE_ENV === 'production' ? '/blt_sharepoint' : '', // Only use basePath in production
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/blt_sharepoint/' : '', // Only use assetPrefix in production
+  
+  // Configuration varies based on environment
+  ...(process.env.NODE_ENV === 'development' 
+    ? {
+        // Development settings - no basePath/assetPrefix for local testing
+      }
+    : {
+        // Production settings
+        output: 'export', // Static export for GitHub Pages
+        // Use GITHUB_REPOSITORY environment variable in GitHub Actions, or default to '/BLT'
+        basePath: process.env.GITHUB_REPOSITORY ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}` : '/BLT',
+        // Add trailing slash to assetPrefix
+        get assetPrefix() { return this.basePath + '/'; },
+      }
+  ),
 };
 
 module.exports = nextConfig; 
