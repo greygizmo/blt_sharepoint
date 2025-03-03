@@ -5,7 +5,6 @@ import WhoSection from '../components/WhoSection';
 import WhatSection from '../components/sections/WhatSection';
 import { Suspense } from 'react';
 import SectionNavigation from '../components/SectionNavigation';
-import Footer from '../components/Footer';
 
 export default function Home() {
   // Adjustable opacity for the engine component image (0-1)
@@ -158,8 +157,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
-      <Footer />
     </main>
   );
 }

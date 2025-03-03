@@ -335,12 +335,12 @@ const WhatSection = () => {
               style={{ opacity: imageOpacity }}
             >
               <Image 
-                src="/images/printer-s600.png"
+                src="/images/magics.jpg"
                 alt="AM Services"
                 width={600}
                 height={380}
                 className="object-contain relative z-10"
-                style={{ transform: "scale(1.2)" }}
+                style={{ transform: "scale(0.9)" }}
                 priority={false}
                 loading="lazy"
               />
@@ -548,6 +548,7 @@ const WhatSection = () => {
         </motion.div>
         
         {/* Offerings */}
+        {/*
         <motion.div 
           variants={containerVariants}
           initial="hidden"
@@ -623,6 +624,7 @@ const WhatSection = () => {
             </div>
           </motion.div>
         </motion.div>
+        */}
       </div>
     </section>
   )
