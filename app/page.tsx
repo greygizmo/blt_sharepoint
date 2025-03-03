@@ -91,7 +91,7 @@ export default function Home() {
       
       {/* WHO Section */}
       <Suspense fallback={<div>Loading...</div>}>
-        <section id="who" className="mb-8 scroll-mt-24">
+        <section id="who" className="mb-24 scroll-mt-24">
           <WhoSection />
         </section>
       </Suspense>
@@ -145,10 +145,10 @@ export default function Home() {
               marginBottom: '1.5rem'
             }}
           >
-            PARTNER WITH BLT
+            PARTNER WITH US
           </h2>
           <p className="text-xl text-gray-300 text-center max-w-2xl mx-auto mb-12">
-            Ready to revolutionize your manufacturing processes? Let's start a conversation.
+            We're confident BLT offers value to many of our existing customers, and we can only reach them with your help!
           </p>
           
           <div className="text-center">

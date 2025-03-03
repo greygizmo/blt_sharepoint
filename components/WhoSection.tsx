@@ -73,7 +73,7 @@ export default function WhoSection() {
             <h3 className="subsection-title">Mission & Vision</h3>
             <div className="bg-black bg-opacity-80 p-6 rounded-lg border border-gray-800 mb-8">
               <p className="text-gray-300 mb-3">
-                <span className="text-blt-orange font-bold">Mission:</span> "Make Easier Manufacturing, Make a Better World" (让制造更简单，世界更美好).
+                <span className="text-blt-orange font-bold">Mission:</span> "Make Manufacturing Simpler, Build a Better World".
               </p>
               <p className="text-gray-300 mb-3">
                 <span className="text-blt-orange font-bold">Vision:</span> "To Become the World's Leading AM Technologies Solutions Provider."

@@ -158,7 +158,7 @@ const industries: Industry[] = [
   },
   {
     name: "Automotive",
-    image: "/images/industries/automotive.jpg",
+    image: "/images/industries/automotive.png",
     description: "Prototypes and production parts, such as lightweight subframes, brake components, and mold inserts."
   },
   {
@@ -173,7 +173,7 @@ const industries: Industry[] = [
   },
   {
     name: "Medical & Dental",
-    image: "/images/industries/medical.jpg",
+    image: "/images/industries/medical.png",
     description: "Orthopedic implants, cranial mesh, dental crowns/bridges in titanium or cobalt-chrome."
   },
   {
@@ -429,41 +429,28 @@ const WhatSection = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="mb-16"
+          className="mb-48"
         >
           <motion.h3 
             variants={itemVariants} 
-            className="subsection-title mb-8"
+            className="subsection-title mb-24"
           >
-            Unique Selling Proposition
+            BLT Unique Advantages
           </motion.h3>
           
           <motion.div variants={itemVariants} className="flex flex-col md:flex-row gap-8">
             {/* Left Side - Image */}
-            <div className="w-full md:w-1/2 relative h-[450px] bg-black rounded-lg overflow-hidden flex items-center justify-center border border-gray-800 group">
-              {/* Background glow effect */}
-              <div className="absolute inset-0 bg-[#EA5504]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              
-              {/* Orange accent line */}
-              <div className="absolute top-0 left-0 w-1/3 h-1 bg-gradient-to-r from-[#EA5504] to-transparent"></div>
-              <div className="absolute bottom-0 right-0 w-1/3 h-1 bg-gradient-to-l from-[#EA5504] to-transparent"></div>
-              
+            <div className="w-full md:w-1/2 relative h-[450px] flex items-center justify-center pt-36">
               <Image 
-                src="/images/s400.png"
-                alt="BLT 3D Printer"
+                src="/images/nozzle.png"
+                alt="BLT 3D Printer Nozzle"
                 width={450}
                 height={350}
-                className="object-contain transition-transform duration-700 group-hover:scale-105"
+                className="object-contain transition-transform duration-700"
                 style={{ opacity: imageOpacity }}
                 priority={false}
                 loading="lazy"
               />
-              
-              {/* Overlay text */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black via-black/80 to-transparent">
-                <h4 className="text-xl font-bold text-[#EA5504] mb-2">Advanced 3D Printing Technology</h4>
-                <p className="text-gray-300 text-sm">Cutting-edge multi-laser systems with exceptional build volumes</p>
-              </div>
             </div>
             
             {/* Right Side - Accordion */}
@@ -519,7 +506,7 @@ const WhatSection = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="mt-12"
+          className="mt-40 mb-32"
         >
           <motion.h3 variants={itemVariants} className="subsection-title mb-5">Industries We Serve</motion.h3>
           
@@ -532,11 +519,11 @@ const WhatSection = () => {
                 key={index} 
                 className="relative group overflow-hidden rounded-lg h-[180px]"
               >
-                {/* Industry image */}
+                {/* Industry image - UPDATED to use specific industry images */}
                 <div className="absolute inset-0 z-0">
                   <div className="relative w-full h-full" style={{ opacity: imageOpacity }}>
                     <Image 
-                      src={`/images/${index % 2 === 0 ? 'metal-3d-printer.png' : 'Engine Integration Component.png'}`}
+                      src={industry.image}
                       alt={industry.name}
                       fill
                       className="object-cover opacity-40"
@@ -565,6 +552,7 @@ const WhatSection = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
+          className="mt-16"
         >
           <motion.h3 
             variants={itemVariants} 

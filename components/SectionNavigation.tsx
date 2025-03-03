@@ -9,7 +9,6 @@ const sections = [
   { id: "what", title: "WHAT" },
   { id: "why", title: "WHY" },
   { id: "how", title: "HOW" },
-  { id: "closing", title: "CONTACT" },
 ]
 
 const SectionNavigation = () => {
