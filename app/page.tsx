@@ -1,3 +1,5 @@
+"use client"
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from "../components/ui/button";
@@ -5,6 +7,7 @@ import WhoSection from '../components/WhoSection';
 import WhatSection from '../components/sections/WhatSection';
 import { Suspense } from 'react';
 import SectionNavigation from '../components/SectionNavigation';
+import { getAssetPath } from '../lib/utils';
 
 export default function Home() {
   // Adjustable opacity for the engine component image (0-1)
@@ -22,7 +25,7 @@ export default function Home() {
         {/* BLT Logo */}
         <div className="fixed top-4 left-4 z-50 p-2">
           <Image 
-            src="/images/blt-logo-white.png" 
+            src={getAssetPath("/images/blt-logo-white.png")}
             alt="BLT Logo" 
             width={101}
             height={41}
@@ -43,7 +46,7 @@ export default function Home() {
             }}
           >
             <Image 
-              src="/images/Engine Integration Component.png" 
+              src={getAssetPath("/images/Engine Integration Component.png")}
               alt="Engine Integration Component" 
               fill
               className="object-contain"
