@@ -82,6 +82,42 @@ npm run start
 yarn start
 ```
 
+## GitHub Pages Deployment
+
+This project is configured to be deployed on GitHub Pages automatically when changes are pushed to the master branch. The deployment is handled by GitHub Actions.
+
+### How it works
+
+1. The Next.js configuration (`next.config.js`) is set up for static export with:
+   ```javascript
+   {
+     output: 'export',
+     basePath: '/blt_sharepoint',
+     assetPrefix: '/blt_sharepoint/',
+     images: {
+       unoptimized: true
+     }
+   }
+   ```
+
+2. A GitHub Actions workflow (`.github/workflows/deploy.yml`) handles:
+   - Building the application
+   - Deploying to GitHub Pages
+
+### Manual Deployment
+
+If you need to trigger a deployment manually:
+
+1. Go to the repository on GitHub
+2. Navigate to the "Actions" tab
+3. Select "Deploy to GitHub Pages" workflow
+4. Click "Run workflow" and select the branch
+
+### Viewing the Deployed Site
+
+Once deployed, the site will be available at:
+`https://yourusername.github.io/blt_sharepoint/`
+
 ## Customization
 
 ### Colors
