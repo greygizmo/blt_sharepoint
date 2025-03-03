@@ -27,7 +27,7 @@ export default function Home() {
             alt="BLT Logo" 
             width={101}
             height={41}
-            className="w-auto h-auto"
+            className="w-[80px] h-auto object-contain" 
             priority
           />
         </div>
@@ -91,7 +91,7 @@ export default function Home() {
       
       {/* WHO Section */}
       <Suspense fallback={<div>Loading...</div>}>
-        <section id="who" className="mb-24 scroll-mt-24">
+        <section id="who" className="mb-8 scroll-mt-24">
           <WhoSection />
         </section>
       </Suspense>
@@ -106,7 +106,7 @@ export default function Home() {
       {/* WHY Section - Placeholder */}
       <section className="relative min-h-screen w-full" id="why">
         <div className="absolute inset-0 bg-black"></div>
-        <div className="absolute inset-0 retro-grid opacity-10"></div>
+        <div className="absolute inset-0 retro-grid opacity-30"></div>
         
         <div className="container mx-auto relative z-10 pt-20 pb-10 px-4 md:px-6">
           <h3 className="font-winston subsection-title">
@@ -119,7 +119,7 @@ export default function Home() {
       {/* HOW Section - Placeholder */}
       <section className="relative min-h-screen w-full" id="how">
         <div className="absolute inset-0 bg-black"></div>
-        <div className="absolute inset-0 retro-grid opacity-10"></div>
+        <div className="absolute inset-0 retro-grid opacity-30"></div>
         
         <div className="container mx-auto relative z-10 pt-20 pb-10 px-4 md:px-6">
           <h3 className="font-winston subsection-title">
@@ -132,7 +132,7 @@ export default function Home() {
       {/* CLOSING NOTE Section */}
       <section className="relative min-h-screen w-full" id="closing">
         <div className="absolute inset-0 bg-black"></div>
-        <div className="absolute inset-0 retro-grid opacity-10"></div>
+        <div className="absolute inset-0 retro-grid opacity-30"></div>
         
         <div className="container mx-auto relative z-10 pt-20 pb-10 px-4 md:px-6">
           <h2 

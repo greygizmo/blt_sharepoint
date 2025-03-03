@@ -190,7 +190,7 @@ const industries: Industry[] = [
 
 const WhatSection = () => {
   const sectionRef = useRef<HTMLElement>(null)
-  const isInView = useInView(sectionRef, { once: false, amount: 0.2 })
+  const isInView = useInView(sectionRef, { once: true, amount: 0.1 })
   
   // Adjustable opacity for images (0-1)
   const imageOpacity = 0.9
@@ -201,7 +201,7 @@ const WhatSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.1
       }
     }
   }
@@ -212,7 +212,7 @@ const WhatSection = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5
+        duration: 0.3
       }
     }
   }
@@ -269,7 +269,8 @@ const WhatSection = () => {
                 height={380}
                 className="object-contain relative z-10"
                 style={{ transform: "scale(1.2)" }}
-                priority
+                priority={false}
+                loading="lazy"
               />
             </div>
             <div className="w-full md:w-1/2 md:pl-4">
@@ -292,7 +293,8 @@ const WhatSection = () => {
                 height={350}
                 className="object-contain relative z-10"
                 style={{ transform: "scale(0.75)", marginTop: "-2rem", marginBottom: "-2rem" }}
-                priority
+                priority={false}
+                loading="lazy"
               />
             </div>
             <div className="w-full md:w-1/2 md:pl-4">
@@ -315,7 +317,8 @@ const WhatSection = () => {
                 height={380}
                 className="object-contain relative z-10"
                 style={{ transform: "scale(1.2)" }}
-                priority
+                priority={false}
+                loading="lazy"
               />
             </div>
             <div className="w-full md:w-1/2 md:pl-4">
@@ -338,7 +341,8 @@ const WhatSection = () => {
                 height={380}
                 className="object-contain relative z-10"
                 style={{ transform: "scale(1.2)" }}
-                priority
+                priority={false}
+                loading="lazy"
               />
             </div>
             <div className="w-full md:w-1/2 md:pl-4">
@@ -389,7 +393,8 @@ const WhatSection = () => {
                             height={200}
                             className="object-contain"
                             style={{ transform: "scale(1.25)" }}
-                            priority
+                            priority={false}
+                            loading="lazy"
                           />
                         </div>
                       </CardHeader>
@@ -450,7 +455,8 @@ const WhatSection = () => {
                 height={350}
                 className="object-contain transition-transform duration-700 group-hover:scale-105"
                 style={{ opacity: imageOpacity }}
-                priority
+                priority={false}
+                loading="lazy"
               />
               
               {/* Overlay text */}
@@ -534,7 +540,8 @@ const WhatSection = () => {
                       alt={industry.name}
                       fill
                       className="object-cover opacity-40"
-                      priority
+                      priority={false}
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -575,7 +582,8 @@ const WhatSection = () => {
                   width={300}
                   height={180}
                   className="object-contain"
-                  priority
+                  priority={false}
+                  loading="lazy"
                 />
               </div>
               <div className="w-full md:w-1/2">
@@ -594,7 +602,8 @@ const WhatSection = () => {
                   width={300}
                   height={180}
                   className="object-contain"
-                  priority
+                  priority={false}
+                  loading="lazy"
                 />
               </div>
               <div className="w-full md:w-1/2">
@@ -613,7 +622,8 @@ const WhatSection = () => {
                   width={300}
                   height={180}
                   className="object-contain"
-                  priority
+                  priority={false}
+                  loading="lazy"
                 />
               </div>
               <div className="w-full md:w-1/2">

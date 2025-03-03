@@ -156,9 +156,6 @@ export default function WhoSection() {
                 Next
               </button>
             </div>
-            
-            {/* Spacer to allow vertical scrolling to continue after timeline animation */}
-            <div className="h-[40vh]"></div>
           </div>
         </div>
       </div>

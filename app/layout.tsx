@@ -1,5 +1,21 @@
 import type { Metadata } from "next";
+import { Space_Grotesk } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+
+// Load Space Grotesk from Google Fonts
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-space-grotesk",
+});
+
+// Load Winston locally
+const winston = localFont({
+  src: "../public/fonts/Winston-BlackItalic.ttf",
+  variable: "--font-winston",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "BLT Advanced Manufacturing",
@@ -16,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="font-space-grotesk">
+    <html lang="en" className={`${spaceGrotesk.variable} ${winston.variable} font-sans`}>
       <body className="min-h-screen bg-black text-white">
         <div className="vertical-laser h-screen">
           <div className="absolute top-1/2 left-0 w-full h-[10px] bg-blt-orange laser-glow"></div>

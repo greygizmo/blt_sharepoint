@@ -195,8 +195,8 @@
 .retro-grid {
   background-color: #000;
   background-image: 
-    linear-gradient(rgba(234, 85, 4, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(234, 85, 4, 0.1) 1px, transparent 1px);
+    linear-gradient(rgba(234, 85, 4, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(234, 85, 4, 0.3) 1px, transparent 1px);
   background-size: 20px 20px;
   background-position: -1px -1px;
   mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);

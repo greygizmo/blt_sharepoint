@@ -5,9 +5,9 @@ const nextConfig = {
     domains: ['placehold.co'],
     unoptimized: true, // Required for static export
   },
-  output: 'export', // Generates static HTML/CSS/JS files
-  basePath: '/blt_sharepoint', // Change this to your repo name
-  assetPrefix: '/blt_sharepoint/', // Change this to your repo name
+  output: process.env.NODE_ENV === 'production' ? 'export' : undefined, // Only use export for production
+  basePath: process.env.NODE_ENV === 'production' ? '/blt_sharepoint' : '', // Only use basePath in production
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/blt_sharepoint/' : '', // Only use assetPrefix in production
 };
 
 module.exports = nextConfig; 

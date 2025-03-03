@@ -72,8 +72,10 @@ const config: Config = {
         },
       },
       fontFamily: {
-        heading: ['Winston-BlackItalic', 'serif'],
-        sans: ['Space Grotesk', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-winston)', 'serif'],
+        winston: ['var(--font-winston)', 'serif'],
+        sans: ['var(--font-space-grotesk)', 'system-ui', 'sans-serif'],
+        'space-grotesk': ['var(--font-space-grotesk)', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
