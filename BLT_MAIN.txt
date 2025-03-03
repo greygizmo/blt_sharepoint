@@ -1,0 +1,69 @@
+BLT Vendor Intranet Page
+MAIN PAGE 1: WHO, WHAT, WHY, HOW
+1.1	WHO IS BLT?
+o	Mission: Vision, and Core Values
+•	Mission: “Make Easier Manufacturing, Make a Better World” (让制造更简单，世界更美好).
+•	Vision: “To Become the World’s Leading AM Technologies Solutions Provider.”
+•	Core Value: “Achieve Customer Success, Create Value.”
+•	BLT is strongly customer-centric, emphasizes R&D, and invests heavily in innovation. As a publicly listed firm, BLT files multiple new patents each year (600+ cumulative). Approximately 25% of BLT’s 2500+ employees are in R&D (and roughly 40% hold post-graduate degrees). Management fosters a culture of “relentless improvement” to tackle hard problems like multi-laser alignment, large-format builds, new alloys, and support-free printing.
+•	BLT also highlights corporate responsibility and green manufacturing, noting that additive methods reduce material waste and enable lighter, more efficient parts. It supports workforce development via sponsorship of national AM skills competitions and partnerships with universities (joint labs, student training programs).
+o	Timeline of Milestones
+•	2011: Company established in Xi’an.
+•	2012: Participated in national innovation projects, such as printing complex titanium components for China’s C919 aircraft.
+•	2017: BLT’s “Metal Additive Manufacturing Intelligent Factory” recognized as a national Intelligent Manufacturing Pilot Demonstration Project.
+•	2018: Signed a joint R&D agreement with Airbus for metal AM in aerospace.
+•	2019: Listed on China’s STAR Market (stock code 688333.SH). Showcased a one-stop AM solution at TCT Asia.
+•	2021: Launched the BLT-S800 with 10 lasers—among the first multi-laser large-format PBF systems.
+•	2023: Introduced the BLT-S800 “BRIGHT” version with 20 lasers; rolled out the BLT-S1500 with 26 lasers (one of the world’s largest LPBF printers). Also contributed to the Zhuque-2 Y2 commercial rocket launch by LandSpace (Blue Arrow Aerospace).
+•	2024: Partnered with Materialise for software integration; continued global expansion (signing distribution agreements in Japan, Korea, Poland, etc.). By mid-2024, BLT claimed 2,800+ customers worldwide.
+________________________________________
+1.2 WHAT
+1.	Product/Service Description
+Through this exciting partnership, we bring together:
+o	BLT Metal 3D Printers (LPBF): An array of systems from lab-scale (S210) to ultra-large industrial (S1500) with multi-laser technology.
+o	BLT Metal Powders: Over 80 alloy grades—titanium, aluminum, nickel superalloys, stainless/tool steels, copper, and more.
+o	Post-Processing & Powder Management Solutions: Automated sieving, recycling, and closed-loop powder handling machines (e.g., GF500, SF400, HS03, XH300).
+o	Comprehensive AM Services: Application engineering, design for additive manufacturing (DFAM) consultation. As we build out our metal additive facility we’ll begin offer to offer prototyping, high-mix love-volume manufacturing, finishing, and final part validation services.
+2.	Unique Selling Proposition (USP) & Key Benefits
+o	High-Speed Multi-Laser Printing: All BLT printers support multi-laser technology, from 2 up to 26 on the top-end S1500. High laser density massively cuts build times for production parts.
+o	Large-Format Builds: The competition’s “extra large format” is square in the middle of BLT’s expansive family of LPBF printers. With BLT, companies can print up to 1.5 m in a single build, enabling true consolidation of large assemblies.
+o	Integrated Solutions (Hardware + Powder): BLT’s synergy between machines and custom powders helps ensure consistent, high-quality outputs.
+o	Proven Track Record: Components in rockets, airplanes, racecars, and consumer electronics—backed by demanding global industries.
+o	Strategic Pricing Advantage: Typically 15–30% lower cost vs. major Western AM brands, allowing more accessible entry into metal 3D printing.
+3.	Key Industries Served
+BLT’s metal AM solutions are applied across a broad array of industries:
+o	Aerospace & Aviation: High-performance engine and structural parts, including flight-critical components for military and civilian aircraft, UAVs, and new space vehicles. BLT’s titanium and superalloy prints are used in engine turbine blades, compressor cases, rocket nozzles, and more.
+o	Space: Large rocket and satellite components, with BLT’s technology contributing to projects like the Zhuque-2 Y2 commercial rocket and China’s Tianzhou-6 cargo spacecraft.
+o	Automotive: Prototypes and production parts, such as lightweight subframes, brake components, and mold inserts. BLT’s multi-laser printers enable batch production in tire mold segments and conformal-cooling automotive tooling.
+o	Energy (Power Generation): Turbine blades, combustor components, and high-temperature tooling. Superalloys like Inconel 718 and Hastelloy X offer durability in gas turbines.
+o	Mold & Tooling: Conformal cooling molds, injection mold inserts, die-cast tooling, which reduce cycle times and improve part quality. BLT has had significant success in footwear mold manufacturing.
+o	Medical & Dental: Orthopedic implants, cranial mesh, dental crowns/bridges in titanium or cobalt-chrome. BLT’s ELI (Extra-Low Interstitial) titanium alloys and Co–Cr–Mo are used for biocompatible implants.
+o	Electronics & Consumer Products: Titanium watch components, hinges in foldable phones, and other small precision parts. Apple and Huawei have reportedly adopted BLT’s 3D printed titanium parts for wearables (e.g., Apple Watch Ultra) and phone hinges.
+o	Research & Education: BLT provides lab-scale systems and custom powder development for universities, research institutes, and corporate R&D centers.
+4.	Offerings
+o	Turn Key Solutions: Ideal for manufacturers who want to quickly adopt metal AM with minimal risk.
+o	Large-Scale Production Cells: Multiple printers plus automated powder handling modules for continuous, high-volume manufacturing.
+o	Pilot Project Services: Customers can test part feasibility or produce short-run jobs through BLT’s [and eventually GoEngineer’s] printing service bureaus.
+________________________________________
+1.3 WHY
+1.	Value Proposition for Customers
+o	Rapid Innovation: Shorten time-to-market with advanced multi-laser technology and streamlined workflows.
+o	Cost Savings & Efficiency: Reduce waste, labor demands, and turnaround times via integrated powder recycling and high build rates.
+o	High Confidence: Leverage proven aerospace-grade quality—BLT has successfully printed flight-critical parts and large-scale automotive components.
+o	Local Support & Expertise: Our skilled team plus BLT’s global resources provide ongoing training and service at every step.
+2.	Competitive Differentiators
+o	Scalable Range of Systems: From small lab R&D setups to multi-laser industrial powerhouses.
+o	Near “Support-Free” Printing: BLT is best-in-class when it comes to low overhang capabilities. By mastering process control they can drastically minimize support structures—although not entirely “support-free” for all geometries—leading to more design freedom.
+o	Extensive Material Portfolio: Customers can choose from standard alloys or have BLT tailor powders to specialized applications.
+o	Holistic Production Approach: Printing, powders, post-processing, and dedicated training all under one solution umbrella.
+________________________________________
+1.4 HOW
+Points of Contact
+1.	Internal BLT Sales Leader [Josh Brown]
+1.	Role: Oversees all BLT machine and powder sales to our organization. Provides formal quotes, product availability updates, and co-develops proposals.
+2.	Contact: jbrown@goengineer.com
+2.	Internal BLT Technical Leader [Tyler Reid]
+1.	Role: Manages complex technical queries, product training, and escalations for advanced applications or machine issues.
+________________________________________
+1.5	CLOSING NOTE
+Our partnership with BLT is an incredible opportunity to expand our reach in the metal additive manufacturing space. By combining BLT’s high-performance hardware, innovative powder solutions, and proven success in demanding industries with our local expertise and customer focus, we can significantly impact how manufacturers approach metal part production. Our playbooks are designed to help every person confidently talk about, sell, and support BLT’s solutions. Feel free to add your own success stories, personal touches, and unique insights as we continue to build excitement and deliver value to our customers.

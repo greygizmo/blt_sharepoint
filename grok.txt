@@ -1,0 +1,222 @@
+Objective:
+Create a single-page intranet (SharePoint) landing page using Next.js, Shadcn UI components, and Framer Motion animations. This page serves as the main information hub for employees about a new product partnership with BLT. The design must exude a bold retro-futurism vibe, featuring a light mode, mostly grayscale color scheme with accents of BLT’s orange (#EA5504), and a subtle laser-like glow effect animated throughout the scroll. The website should be minimalistic, stylish, visually stunning, stable, and easy to edit with plug-and-play functionality for images and data.
+Overall Design Requirements
+Framework: Use Next.js for the structure, Shadcn UI for components, and Framer Motion for animations.
+
+Color Scheme: 
+Light mode background (e.g., #F5F5F5 or white).
+
+Grayscale typography and elements (e.g., #333, #666, #999).
+
+Accents of BLT’s orange (#EA5504) for highlights, buttons, and interactive elements.
+
+Retro-Futurism Vibe: 
+Use clean, geometric shapes (e.g., circles, sharp lines).
+
+Add subtle gradients (e.g., grayscale with orange hints).
+
+Incorporate a laser-like glow effect (orange glow on borders, titles, or as a scroll indicator).
+
+Animations: 
+Use Framer Motion for smooth scroll-based transitions, fade-ins, and glow effects.
+
+Animate a vertical "laser line" (orange, #EA5504) that follows scroll progress with a subtle glow.
+
+Layout: 
+Single-page design with smooth scrolling between sections: WHO, WHAT, WHY, HOW, and CLOSING NOTE.
+
+Include anchor navigation links at the top.
+
+Responsiveness: Fully responsive for desktop and mobile.
+
+Stability & Editability: 
+Optimize for performance (e.g., lazy loading for images).
+
+Use props or a simple CMS structure for easy content updates.
+
+Separate components clearly (e.g., WhoSection.jsx, WhatSection.jsx).
+
+Section 1: WHO IS BLT?
+Description: Introduces BLT with Mission, Vision, Core Values, and a Timeline of Milestones.
+Components:
+Accordion for Mission, Vision, Core Values:
+Use <Accordion> from Shadcn UI.
+
+Each item (e.g., "Mission") has a title and expandable content.
+
+Style headers with #EA5504 and a subtle glow effect on hover (Framer Motion).
+
+Example content: "Mission: To innovate 3D printing solutions."
+
+Interactive Horizontal Timeline:
+Place at the end of the WHO section.
+
+Create a custom component with clickable dots or cards for milestones (e.g., "2011: Company Established").
+
+On click, expand to show details (e.g., description, date).
+
+Style with a grayscale track and orange dots/cards; animate active milestone with a glow effect.
+
+Layout:
+Accordion at the top, full-width.
+
+Timeline below, horizontally scrollable with a fixed height (e.g., 200px).
+
+Animations:
+Fade-in accordion items as they enter the viewport.
+
+Animate the timeline’s glow effect along the track as the user scrolls.
+
+Section 2: WHAT
+Description: Highlights BLT’s offerings with Product & Services, Unique Selling Points (USP), Key Industries Served, and Offerings subsections.
+Components:
+Product & Services Subsections (e.g., "BLT Metal 3D Printers"):
+Each subsection is a distinct component, scrolled vertically.
+
+Layout:
+Left: Image (placeholder, 50% width).
+
+Right: Title (e.g., "BLT Metal 3D Printers") in #EA5504 and description in grayscale.
+
+Use clean typography and minimal padding.
+
+Carousel for BLT Printers (below "BLT Metal 3D Printers"):
+Use <Carousel> from Shadcn UI or a custom solution.
+
+Each card includes:
+Printer Name (e.g., "BLT-S600")
+
+Image (square, placeholder)
+
+Build Volume (e.g., "600 x 600 x 600 mm")
+
+Build Rate (e.g., "100 cm³/h")
+
+Lasers/Power (e.g., "4 x 500W")
+
+Applications (e.g., "Aerospace, Medical")
+
+Button: "Download Datasheet" (links to OneDrive PDF)
+
+Style cards with grayscale backgrounds, #EA5504 borders, and a glow hover effect.
+
+Unique Selling Points (USP):
+Use <Tabs> from Shadcn UI.
+
+Each tab (e.g., "High-Speed Multi-Laser Printing") shows corresponding details.
+
+Active tab indicator in #EA5504 with a glow effect.
+
+Key Industries Served:
+Use a carousel with square image cards.
+
+Each card:
+Image (grayscale filter, square).
+
+Title over image (e.g., "Aerospace") in #EA5504.
+
+Description appears on hover (grayscale text, orange border).
+
+Offerings:
+Identical to Product & Services: image on left, title and description on right.
+
+Layout:
+Vertically stacked subsections with clear separation (e.g., padding or subtle dividers).
+
+Carousel sections span full width.
+
+Animations:
+Fade-in subsections as they enter the viewport.
+
+Animate carousel cards sliding in with a glow effect on hover.
+
+Section 3: WHY
+Description: Explains why choose BLT with Value Proposition for Customers and Competitive Differentiators.
+Components:
+Sectioned Scroll with Persistent Titles:
+Left Side: Fixed-position titles ("WHY" and subsection, e.g., "Value Proposition for Customers") in #EA5504 with a glow effect.
+
+Right Side: Scrollable <div> listing items (e.g., value propositions).
+
+When the user scrolls to the end of the list, the page scrolls to "Competitive Differentiators," updating the right-side content.
+
+Example value proposition: "Cost-effective 3D printing solutions."
+
+Layout:
+Left: 30% width, fixed titles.
+
+Right: 70% width, scrollable content area.
+
+Animations:
+Fade-in titles and content as the section enters the viewport.
+
+Animate the scroll transition between subsections with a smooth glow effect.
+
+Section 4: HOW
+Description: Provides contact information.
+Components:
+Contact Cards:
+Use <Card> from Shadcn UI.
+
+Each card includes:
+Name (e.g., "Josh Brown")
+
+Role (e.g., "Sales Leader")
+
+Contact (e.g., "jbrown@goengineer.com")
+
+Style with grayscale backgrounds, #EA5504 borders, and a glow hover effect.
+
+Layout:
+Grid or row layout (e.g., 3 cards per row on desktop).
+
+Animations:
+Scale up cards slightly on hover with a glow effect.
+
+Section 5: CLOSING NOTE
+Description: Concludes with a call to action.
+Components:
+Text Block: Centered closing text in grayscale.
+
+Call to Action:
+Two buttons:
+"Sales Playbook" (placeholder link)
+
+"Technical Playbooks" (placeholder link)
+
+Style with #EA5504 backgrounds and a glowing hover effect.
+
+Layout:
+Centered text and buttons with ample white space.
+
+Animations:
+Fade-in text and buttons with a pulsing glow on the buttons.
+
+Additional Instructions
+Laser-Like Glow Effect:
+Implement an orange (#EA5504) glow on section borders, titles, or as a vertical scroll indicator.
+
+Use Framer Motion to animate the glow moving with scroll progress (e.g., motion.div with scrollYProgress).
+
+Plug-and-Play:
+Use props for all text and images (e.g., {title}, {imageSrc}).
+
+Include placeholder images (e.g., gray squares) and text where needed.
+
+Performance:
+Lazy load images and components outside the initial viewport (next/image with loading="lazy").
+
+Optimize animations for smooth scrolling.
+
+Editability:
+Organize code into separate components (e.g., WhoSection.jsx, WhatSection.jsx).
+
+Use CSS modules or styled-components for modular styling.
+
+Final Notes
+Retro-Futurism: Emphasize clean lines, geometric shapes, and bold orange accents to evoke a futuristic yet nostalgic feel.
+
+Minimalism: Maintain ample white space, avoiding clutter, while ensuring visual impact with animations and glows.
+
+Bold UI: Trust this structure for a stunning, user-friendly experience from the start.
+
