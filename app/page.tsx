@@ -57,17 +57,17 @@ export default function Home() {
           <h1 
             className="text-white mb-6 leading-tight tracking-tighter"
             style={{ 
-              fontSize: '56px',
+              fontSize: '72px',
               fontFamily: "'Winston-BlackItalic', serif",
               textShadow: '0 0 5px #EA5504, 0 0 10px #EA5504, 0 0 20px #EA5504'
             }}
           >
-            <span style={{ display: 'block' }}>BRIGHT FUCKING LASER</span>
+            <span style={{ display: 'block' }}>BRIGHT LASER</span>
             <span style={{ display: 'block' }}>TECHNOLOGIES</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mb-16">
-            Metal additive manufacturing solutions for the world's most demanding industries.
+            A new partner and new era of metal additive manufacturing for GoEngineer and North America.
           </p>
           
           <div className="flex flex-wrap gap-4">

@@ -42,7 +42,7 @@ const printers: Printer[] = [
     buildRate: "30 cm³/h",
     lasers: "2 x 500W",
     applications: ["Small Parts Batch Prod.", "Dental Restorations", "Jewelry & Micro Parts"],
-    datasheetUrl: "/datasheets/BLT-A160_datasheet.pdf"
+    datasheetUrl: "https://goengineer.sharepoint.com/:b:/s/BLT/Eajla_Z30tZKiEHbgBCLvBYBwPrFzkFSCs0bNoZrwQ0MjQ?e=qQPd9G"
   },
   {
     name: "BLT-A300/A320",

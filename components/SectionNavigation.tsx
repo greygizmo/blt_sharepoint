@@ -1,72 +1,82 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
+import { useRef, useEffect, useState } from "react"
+import { useInView } from "framer-motion"
+import Link from "next/link"
 
-// Define sections with their IDs and titles
 const sections = [
-  { id: "hero", title: "" },
   { id: "who", title: "WHO" },
   { id: "what", title: "WHAT" },
   { id: "why", title: "WHY" },
   { id: "how", title: "HOW" },
-  { id: "contact", title: "CONTACT" }
-];
+  { id: "closing", title: "CONTACT" },
+]
 
-export default function SectionNavigation() {
-  const [activeSection, setActiveSection] = useState<string>("hero");
-  
-  // Find current section data
-  const currentSection = sections.find(section => section.id === activeSection) || sections[0];
-  
+const SectionNavigation = () => {
+  const [activeSection, setActiveSection] = useState<string | null>(null)
+
+  // Detect active section based on scroll position
   useEffect(() => {
-    // Create an Intersection Observer to detect when sections are in view
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        // Adjust threshold to control how much of the section needs to be visible
-        threshold: 0.3,
-        // Add rootMargin to trigger the change slightly before/after the section is in view
-        rootMargin: "-10% 0px -10% 0px"
-      }
-    );
-    
-    // Observe all sections
-    sections.forEach((section) => {
-      const element = document.getElementById(section.id);
-      if (element) {
-        observer.observe(element);
-      }
-    });
-    
-    return () => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 3 // Trigger earlier in viewport
+
       sections.forEach((section) => {
-        const element = document.getElementById(section.id);
+        const element = document.getElementById(section.id)
         if (element) {
-          observer.unobserve(element);
+          const { offsetTop, offsetHeight } = element
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section.id)
+          }
         }
-      });
-    };
-  }, []);
-  
+      })
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    handleScroll() // Initial check
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
-    <div className="fixed left-8 top-0 h-screen flex items-center z-20 pointer-events-none">
-      <motion.h2
-        key={activeSection}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.3 }}
-        className="font-black text-6xl transform -rotate-90 whitespace-nowrap text-white"
-      >
-        {currentSection.title}
-      </motion.h2>
+    <div className="fixed top-0 left-0 h-screen w-24 flex flex-col items-center justify-center z-30 space-y-8">
+      {sections.map((section) => {
+        const ref = useRef(null)
+        const isInView = useInView(ref, { margin: "-100px 0px -100px 0px" }) // Adjust visibility threshold
+
+        return (
+          <div key={section.id} className="w-24 flex items-center justify-center">
+            <Link
+              href={`#${section.id}`}
+              ref={ref}
+              className={`text-4xl font-black transition-all duration-300 ${
+                activeSection === section.id ? "text-white neon-text" : "text-gray-700"
+              }`}
+              style={{
+                opacity: activeSection === section.id ? 1 : 0.5,
+                fontFamily: "'Winston-BlackItalic', serif",
+                whiteSpace: "nowrap", // Prevents text wrapping
+              }}
+              aria-label={`Go to ${section.title} section`}
+              tabIndex={0}
+              onClick={(e) => {
+                e.preventDefault()
+                const element = document.getElementById(section.id)
+                if (element) element.scrollIntoView({ behavior: "smooth" })
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault()
+                  const element = document.getElementById(section.id)
+                  if (element) element.scrollIntoView({ behavior: "smooth" })
+                }
+              }}
+            >
+              {section.title}
+            </Link>
+          </div>
+        )
+      })}
     </div>
-  );
-} 
+  )
+}
+
+export default SectionNavigation

@@ -64,10 +64,7 @@ export default function WhoSection() {
       <div className="absolute inset-0 bg-black"></div>
       <div className="absolute inset-0 retro-grid opacity-10"></div>
       
-      {/* Left-side persistent navigation */}
-      <div className="section-nav">
-        <h2 className="section-title section-title-active">WHO</h2>
-      </div>
+     
       
       <div className="container mx-auto relative z-10">
         <div className="pt-20 pb-10 px-4 md:px-6">
